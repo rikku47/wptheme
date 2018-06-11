@@ -1,0 +1,174 @@
+$font-color: white;
+$bg-color-a-hover: #33a2aa;
+$bg-color-nav: #5f5f5f;
+$bg-color-footer:#0d9af1;
+$box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+*{
+    Margin: 0;
+    Padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: $font-color;
+    text-decoration: none;
+}
+
+nav {
+    background-color: $bg-color-nav; 
+    box-shadow: $box-shadow;
+    position: fixed;
+    width: 100%;
+
+    a {
+        display: block;
+        padding: 20px;
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+
+        li a:hover {
+            background-color:$bg-color-a-hover;
+            color: $font-color;
+            text-decoration: none;
+        }
+        
+        li:hover > ul {
+            box-shadow: $box-shadow;
+            visibility: visible;
+        }
+    }
+}
+
+.show-menu {
+    color: $font-color;
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.sub-menu {
+    background-color: $bg-color-nav;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .menu-hauptmenue-container{
+    display: block;
+}
+
+#menu.scroll{
+    position: fixed;
+    width: 100%;
+}
+
+#wrapper {
+    @include center();
+    width: 90%;
+    min-height: 100%;
+    padding-top: 80px;
+}
+
+.article {
+    box-shadow: $box-shadow;
+    @include center();
+    margin-bottom: 20px;
+    width: 80%;
+    min-height: 100%;
+    padding: 40px;
+
+    h1 {
+        margin-bottom: 16px;
+    }
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: justify;
+
+        a {
+            color: #0d9af1;
+        }
+    }
+
+    ul {
+        margin-top: 5px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+}
+
+footer {
+    background-color: $bg-color-footer;
+    box-shadow: $box-shadow;
+    bottom: 0px;
+    color: $font-color;
+    text-align: center;
+
+    p {
+        float: left;
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+#wrapperFooter{
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+
+    .show-menu {
+        display:block;
+    }
+
+    .menu-hauptmenue-container {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        
+        li:hover > ul {
+            position: static;
+        } 
+    }
+
+    #menu {
+        text-align: center;
+    }
+    
+    .sub-menu {
+        width: 100%;
+        
+        li {
+            float: left;
+        }
+    }
+  }

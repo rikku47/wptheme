@@ -1,0 +1,130 @@
+/*
+Theme Name: Light Theme
+Author: Kai Friebe
+Description: A simle theme for WordPress
+Version: 0.0.1
+*/
+
+*{
+    Margin: 0;
+    Padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #5f5f5f; 
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+nav a {
+    display: block;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a:hover {
+    background-color: #33a2aa;
+    color: white;
+    text-decoration: none;
+}
+
+#menu.scroll{
+    position: fixed;
+    width: 100%;
+}
+
+.sub-menu {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+}
+
+.sub-menu li a {  
+    background-color: #5f5f5f;
+}
+
+nav ul li:hover > ul {
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+    visibility: visible;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    min-height: 100%;
+    padding-top: 20px;
+}
+
+.article {
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 80%;
+    min-height: 100%;
+    padding: 40px;
+}
+.article h1 {
+    margin-bottom: 16px;
+}
+
+.article p a {
+    color: initial;
+}
+
+footer {
+    background-color: #0d9af1;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+    bottom: 0px;
+    color: white;
+    text-align: center;
+}
+
+#wrapperFooter{
+    display: inline-block;
+}
+
+footer p {
+    float: right;
+    margin: 0;
+    padding: 20px;
+}
+
+@media screen and (max-width : 760px) {
+    ul {
+        position: static;
+        display:  none;
+    }
+
+    li {
+        margin-bottom: 1px;
+    }
+
+    ul li, li a {
+        width: 100%;
+    }
+}
