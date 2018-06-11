@@ -1,4 +1,5 @@
 $font-color: white;
+$font-color-a-in-article: #0d9af1;
 $bg-color-a-hover: #33a2aa;
 $bg-color-nav: #5f5f5f;
 $bg-color-footer:#0d9af1;
@@ -113,7 +114,7 @@ input[type=checkbox]:checked ~ .menu-hauptmenue-container{
         text-align: justify;
 
         a {
-            color: #0d9af1;
+            color: $font-color-a-in-article;
         }
     }
 
