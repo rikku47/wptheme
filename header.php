@@ -18,6 +18,8 @@
     <label for="show-menu" class="show-menu">Menü anzeigen</label>
     <input type="checkbox" id="show-menu" role="button">    
     <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-    </nav>
-
+    </nav> 
     <div id="wrapper">
+		<nav id="breadcrumbs">
+			<?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+		</nav>

@@ -1,3 +1,4 @@
+<button id="btnToTheTop" onclick="topFunction()">Nach oben</button>
 </div>
 <footer>
         <div id="wrapperFooter">
@@ -16,7 +17,8 @@
         </div>
     </footer>
     <!-- JavaScript -->
-    <!-- <script src="<?php echo get_bloginfo('template_directory'); ?>/js/jquery-3.3.1.min.js"></script> -->
+    <script scr="<?php wp_enqueue_script( 'script', get_template_directory_uri() . '/js/btnToTheTop.js'); ?>"></script>
+    <script scr="<?php wp_enqueue_script( 'script', get_template_directory_uri() . '/js/jquery-3.3.1.min.js'); ?>"></script>
     <!-- <script>
         $(document).scroll(function () {
             if (Math.max(0, ($(this).scrollTop() > $("#menu").position().top))) {

@@ -1,4 +1,4 @@
- <div class="article">
+  <div class="article">
     <h1><?php the_title(); ?></h1>
     <p><?php the_content(); ?></p>
 </div>

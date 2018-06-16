@@ -68,6 +68,10 @@ nav {
     text-align: center;
 }
 
+#menu, .sub-menu {
+    z-index: 1;
+}
+
 .sub-menu {
     background-color: $bg-color-nav;
     display: flex;
@@ -80,20 +84,72 @@ input[type=checkbox]{
     display: none;
 }
 
-input[type=checkbox]:checked ~ .menu-hauptmenue-container{
+input[type=checkbox]:checked ~ .menu-hauptmenue-container {
     display: block;
 }
 
-#menu.scroll{
+#menu.scroll {
     position: fixed;
     width: 100%;
+}
+
+#breadcrumbs {
+    background-color: $bg-color-nav;
+    margin-bottom: 20px;
+    position: initial;
+
+    ol {
+        display: flex;
+
+        li {
+            list-style: none;
+
+            a {
+                line-height: 32px;
+                padding: 0px;
+                padding-left: 30px;
+                padding-right: 36px;
+            }
+    
+            a:after {
+                background: $bg-color-nav;
+                content: '';
+                position: absolute;
+                width: 32px;
+                height: 32px;
+                transform: scale(0.707) rotate(45deg);
+                margin-left: 20px;
+            }
+    
+            a:hover {
+                background-color: $bg-color-a-hover;
+            }
+    
+            a.active:after, a:hover:after {
+                background-color: #33a2aa;
+            }
+        }     
+    }    
+}
+
+#breadcrumbs ol li:last-child a:after {
+    content: none;
+}
+
+.active {
+    background-color: $bg-color-a-hover;
+    color: white;
+    display: block;
+    line-height: 32px;
+    padding-left: 30px;
+	padding-right: 36px;
 }
 
 #wrapper {
     @include center();
     width: 90%;
     min-height: 100%;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .article {
@@ -124,6 +180,24 @@ input[type=checkbox]:checked ~ .menu-hauptmenue-container{
         margin-bottom: 5px;
     }
 }
+
+#btnToTheTop {
+    background-color: #5f5f5f;
+    border: none;
+    box-shadow: $box-shadow;
+    bottom: 100px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    outline: none;
+    padding: 20px;
+    position: fixed;
+    right: 40px;
+}
+
+#btnToTheTop:hover {
+    background-color: #33a2aa;
+} 
 
 footer {
     background-color: $bg-color-footer;
